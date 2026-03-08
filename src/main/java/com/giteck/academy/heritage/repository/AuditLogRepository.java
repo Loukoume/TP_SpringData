@@ -1,4 +1,6 @@
 package com.giteck.academy.heritage.repository;
 
-public interface AuditLogRepository {
-}
+import com.giteck.academy.heritage.entity.AuditLog;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AuditLogRepository extends JpaRepository<AuditLog, Long> {}

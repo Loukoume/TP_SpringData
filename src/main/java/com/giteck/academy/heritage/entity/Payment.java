@@ -17,6 +17,6 @@ public abstract class Payment {
     private BigDecimal amount;
     private Instant createdAt;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id_user")
     private User user;
 }

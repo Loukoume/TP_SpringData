@@ -15,8 +15,4 @@ public interface PaymentRepository extends JpaRepository<Payment, Long> {
     """)
     List<PaymentSummary> findAllPaymentSummaries();
 
-    @Query("""
-     select new com.giteck.academy.heritage.entity.CardPayment(p.id,p.class) from Payment  p
-""")
-    List<CardPayment> getCardPayement(String type);
 }

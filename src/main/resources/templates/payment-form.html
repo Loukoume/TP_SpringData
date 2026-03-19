@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nouveau Paiement</title>
+</head>
+<body>
+<h2>Saisir un paiement par carte</h2>
+
+<form th:action="@{/ui/payments/new}" th:object="${paymentForm}" method="post">
+
+    <div>
+        <label>Montant (€) :</label>
+        <input type="text" th:field="*{amount}" required />
+    </div>
+
+    <div>
+        <label>4 derniers chiffres de la carte :</label>
+        <input type="text" th:field="*{cardLast4}" required maxlength="4"/>
+    </div>
+
+    <div>
+        <label>Réseau :</label>
+        <select th:field="*{network}">
+            <option value="VISA">Visa</option>
+            <option value="MASTERCARD">Mastercard</option>
+        </select>
+    </div>
+
+    <button type="submit">Payer</button>
+</form>
+</body>
+</html>

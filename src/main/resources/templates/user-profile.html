@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Profil Utilisateur</title>
+</head>
+<body>
+<h1 th:text="'Profil de : ' + ${user.fullName}">Profil de : John Doe</h1>
+<p th:text="'Email : ' + ${user.email}">Email</p>
+
+<h2>Historique des paiements</h2>
+<ul>
+  <li th:each="payment : ${paymentList}">
+    Paiement n°<span th:text="${payment.id}"></span>
+    - Montant: <span th:text="${payment.amount}"></span> €
+  </li>
+</ul>
+</body>
+</html>

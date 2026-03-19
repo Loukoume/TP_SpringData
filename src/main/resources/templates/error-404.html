@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ressource introuvable</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; background-color: #f8f9fa; }
+        .error-container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: inline-block; }
+        .error-code { font-size: 4em; color: #dc3545; margin: 0; }
+        .error-message { font-size: 1.2em; color: #6c757d; }
+    </style>
+</head>
+<body>
+
+<div class="error-container">
+    <h1 class="error-code">404</h1>
+    <h2>Oups ! Page introuvable.</h2>
+
+    <p class="error-message" th:if="${message}" th:text="${message}"></p>
+
+    <p class="error-message" th:unless="${message}">La ressource que vous avez demandée n'existe pas.</p>
+
+    <br/>
+    <a th:href="@{/}">Retour à la page principale</a>
+</div>
+
+</body>
+</html>

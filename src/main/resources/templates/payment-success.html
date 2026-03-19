@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Paiement Réussi</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding-top: 50px; }
+    .success-box { border: 2px solid green; padding: 20px; display: inline-block; border-radius: 10px; }
+    .success-text { color: green; font-weight: bold; font-size: 1.2em; }
+    a { text-decoration: none; color: blue; }
+  </style>
+</head>
+<body>
+
+<div class="success-box">
+  <h2>🎉 Félicitations !</h2>
+  <p class="success-text">Votre paiement a été enregistré avec succès.</p>
+  <br/>
+  <a th:href="@{/ui/payments/new}">Faire un nouveau paiement</a> |
+  <a th:href="@{/}">Retour à l'accueil</a>
+</div>
+
+</body>
+</html>
